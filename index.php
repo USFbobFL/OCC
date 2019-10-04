@@ -1,6 +1,6 @@
 <?php 
 /*
-http://localhost/imo/rgb.rgbgeek.org/bs4/occdoc/index.php
+http://localhost/imo/rgb.rgbgeek.org/bs4/occ/index.php
 
 */
 $bs4_path = "../"; 

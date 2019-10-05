@@ -2,16 +2,13 @@
 /*
 This program will  provide AJAX services for spa (single page app)  (index.php)
 
-http://localhost/imo/rgb.rgbgeek.org/bs4/pal/AJAXspa.php?fct=checkLoginStatus
-http://localhost/imo/rgb.rgbgeek.org/bs4/pal/AJAXspa.php?fct=attemptLogin&emailaddr=bob.bedford@gmail.com&password=b0b3
-http://localhost/imo/rgb.rgbgeek.org/bs4/pal/AJAXspa.php?fct=Logout
+http://localhost/imo/rgb.rgbgeek.org/bs4/occ/AJAXspa.php?fct=checkLoginStatus
+http://localhost/imo/rgb.rgbgeek.org/bs4/occ/AJAXspa.php?fct=attemptLogin&emailaddr=foo&password=foo
+http://localhost/imo/rgb.rgbgeek.org/bs4/occ/AJAXspa.php?fct=Logout
 
 
 see http://localhost/imo/rgb.rgbgeek.org/bs4/pal/AJAXpal.php for examples
 
-
-we can use $_REQUEST instead of $_GET or $_POST then it will simply be controlled by the AJAX call 
-This is AWESOME as my testing URL can function at the same time the ajax POST method is used
 */
 require("../incl0_PHPinit_bs4.php");
 $incl_nav = false;
@@ -111,6 +108,5 @@ function initializeSPAsessionVariables(){
     $_SESSION['SPA_sql_GetUserGames'] = "";     
     $_SESSION['SPA_sql_issue'] = "";     
 }
-
 
 ?>

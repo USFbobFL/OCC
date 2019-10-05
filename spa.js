@@ -14,7 +14,7 @@ aAJAXqueue = [];
 
 $( document ).ready(function() {
     document_loading = true;
-	writeConsole("debug is active in pal.js", "info");
+	writeConsole("debug is active in spa.js", "info");
 	$('#login_modal').on('hidden.bs.modal', function (e) {
 		if (!checking_login) {
 			checkLoginStatus();
@@ -31,13 +31,6 @@ $( document ).ready(function() {
 	//bs4_toast_info("Welcome to the SPA!");
 });
 function resetCheckboxes(cbid_class){
-	/*
-	Every list of checkboxes created with the bootstrap function getCheckListCode will have the same class 
-	as the checkbox id, so we can easily reset all of the checkboxes with a single jquery command.  
-	I should probably consider adding an option that the bs4 function to render a reset button in the 
-	table header.  In fact, I'm thinking about making this default behavior if the table header is left 
-	blank... to make the header default to a check icon and a warning-color outlined reset button.
-	*/
 	$("."+cbid_class).prop("checked", false);
 }
 function checkLoginStatus(){
@@ -118,8 +111,6 @@ function onAJAXcompleted(success, errorMsg = ""){
 			
 		}
 	} else {
-		
-
 		switch(AJAXfct){
 			case "attemptLogin":
 			case "Logout":
@@ -154,9 +145,6 @@ function emulateSuccessfulLogin(){
     }
     
 }
-
-
-
 function callAJAX(fct, parms = "") {
 	if (!AJAXisActive) {
 		AJAXisActive = true;

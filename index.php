@@ -40,6 +40,7 @@ $lock_icon = "fas fa-lock";
 $keyboard_icon = "fas fa-keyboard";
 $friends_icon = "fas fa-user-friends";
 $video_icon = "fas fa-video";
+$link_icon = "fas fa-link";
 
 $key_note = "<p class='text-primary font-italic'>A shoebox drop-off site should strive to be <b>relational</b>, rather than <b>transactional</b>.</p>";
 
@@ -299,18 +300,35 @@ $paperwork_content = getAccCodeFromArray("acc_paperwork", $aCards);
 
 $prep_day_video_url = "https://occ.polkministries.org/training/collection_network/OCC_drop-off_Prep_day_2019.mp4";
 $sptv_ncw_stv_training_url = "http://sptv.org/national-collection-week-volunteer-training";
-$prep_day = getButtonLinkCode('PrepDay', 'success', true, $prep_day_video_url, 'doprepday2019');
-
-$prep_day_video_link = getLink("Drop-off Prep 2019", $prep_day_video_url, "doprepday2019");
-
+$shoebox_stories_url = "https://www.samaritanspurse.org/operation-christmas-child/shoebox-stories-index";
+$myocclogin_url = "https://myocc.samaritanspurse.org/seconnect/";
+$order_free_materials_url = "https://www.samaritanspurse.org/operation-christmas-child/order-materials/";
 $aLinkList = [
 	["PrepDay", "primary", "For drop-off site leaders", $prep_day_video_url, "doprepday2019"]
    ,["Training", "success", "For short-term volunteers", $sptv_ncw_stv_training_url, "sptvstvtrnncw"] 
+   ,["Impact", "info", "Spiritual impact stories", $shoebox_stories_url, "shoeboxstories"] 
+ ];
+ $aVideoListTable = getLinkListTable($aLinkList);
+
+ $aLinkList = [
+    ["MyOCC", "danger", "My OCC login for volunteers", $myocclogin_url, "shoeboxstories"] 
+   ,["Materials", "warning", "Ordere FREE materials", $order_free_materials_url, "shoeboxstories"] 
  ];
  $aLinkListTable = getLinkListTable($aLinkList);
 
 
-$video_content = '<p>Here are some videos that may be useful.</p>'.$aLinkListTable;
+ $tabset_id = "tsetvidlinks";
+ $aTabsetArray = [];
+ $aTabsetArray[] = ['Videos', $video_icon, '',  $aVideoListTable, true];
+ $aTabsetArray[] = ['Links', $link_icon, '', $aLinkListTable, false];
+ $vidlnk_tabsetcode = getTabsetCodeFromArray($tabset_id, $aTabsetArray);
+
+
+$link_content = '<p>Here are some links that may be useful.</p>'.$vidlnk_tabsetcode;
+
+
+
+
 
 
 /* NAVIGATTION array is very important */
@@ -321,7 +339,7 @@ $navitems = [
    ,['nav4', 'Cartonizing shoeboxes', 'cartonizing_page',   $cartonizing_icon, false, $cartonizing_content]
    ,['nav5', 'Transporting shoeboxes', 'transportation_page',   $transportation_icon, false, $transportation_content]
    ,['nav6', 'Paperwork', 'paperwork_page',   $calculator_icon, false, $paperwork_content]
-   ,['nav7', 'Video', 'video_page',   $video_icon, false, $video_content]
+   ,['nav7', 'Links', 'link_page',   $link_icon, false, $link_content]
 ];
 ?>
 <body>
